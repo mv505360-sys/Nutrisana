@@ -1,0 +1,150 @@
+:root{
+  --bg:#fffaf5;
+  --bg-2:#fbf4eb;
+  --brown:#7a4d2a;
+  --brown-2:#a36f46;
+  --green:#8aa85a;
+  --text:#3b2b1f;
+  --ring:rgba(122,77,42,.25);
+  --muted:#7b5b3e;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, #f4e7db 0, var(--bg) 60%),
+    linear-gradient(180deg, #fff, var(--bg));
+  color:var(--text);
+  line-height:1.65;
+}
+
+/* Header */
+header{
+  position:sticky; top:0;
+  backdrop-filter:saturate(150%) blur(8px);
+  background:rgba(255,250,245,.85);
+  border-bottom:1px solid #efdccd;
+  z-index:10;
+}
+.wrap{max-width:1100px; margin:0 auto; padding:0 20px}
+nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--brown)}
+.brand img{width:44px; height:44px; border-radius:50%; border:2px solid #e6d2c3; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,.05)}
+.brand b{font-weight:800; letter-spacing:.5px}
+.menu a{color:var(--brown); text-decoration:none; padding:8px 12px; border-radius:999px; transition:.15s}
+.menu a:hover{background:#f3e7dc}
+
+/* Hero */
+.hero{
+  display:grid; grid-template-columns:1.15fr .85fr; gap:28px; align-items:center;
+  padding:64px 0 28px;
+}
+.hero h1{font-size:clamp(30px,4.4vw,52px); line-height:1.05; margin:.1em 0 .3em; color:var(--brown)}
+.slogan{font-size:clamp(18px,2.1vw,22px); color:#6b4b33; font-weight:700; margin:6px 0 16px}
+.lead{font-size:clamp(16px,2vw,18px)}
+.badge{display:inline-block; font-size:13px; letter-spacing:.4px; color:#785437; background:#f0e2d5; border:1px solid #e6d2c3; padding:6px 10px; border-radius:999px}
+.cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
+.btn{border:0; border-radius:999px; padding:12px 18px; cursor:pointer; font-weight:800; letter-spacing:.3px; text-decoration:none; display:inline-block; transition:transform .15s, box-shadow .15s}
+.btn.primary{background:var(--brown); color:#fff; box-shadow:0 10px 24px var(--ring)}
+.btn.primary:hover{transform:translateY(-1px)}
+.btn.ghost{color:var(--brown); background:#f4e7db; border:1px solid #e6d2c3}
+.pill-list{display:flex; gap:8px; flex-wrap:wrap; list-style:none; padding:0; margin:16px 0 0}
+.pill-list li{font-size:13px; color:#6b4b33; background:#f7ede2; border:1px solid #ead8c8; padding:6px 10px; border-radius:999px}
+
+.hero .art{display:flex; align-items:center; justify-content:center}
+.logo-card{background:linear-gradient(180deg,#fff, #fff7ef); border:1px solid #efdccd; border-radius:22px; padding:20px; max-width:360px; box-shadow:0 18px 38px rgba(122,77,42,.12)}
+.logo-card img{width:100%; border-radius:14px; border:1px solid #f0e2d5; background:#fff}
+
+/* Sections */
+section{padding:44px 0}
+h2{color:var(--brown); font-size:clamp(22px,3vw,28px); margin:0 0 14px}
+p{margin:0 0 14px}
+.muted{color:var(--muted)}
+
+/* Producto */
+.product-spec{
+  display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px; margin:12px 0 6px;
+}
+.spec{background:#fff; border:1px solid #efdccd; border-radius:14px; padding:12px 14px; box-shadow:0 8px 18px rgba(122,77,42,.06)}
+.spec b{display:block; color:var(--brown); font-size:13px; letter-spacing:.3px}
+.spec span{font-weight:600}
+
+.band{
+  background:linear-gradient(to right,#fff5ea,#f2eadf);
+  border:1px solid #efdccd; border-radius:20px; padding:18px;
+  display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:space-between; margin-top:16px
+}
+.band .price{font-size:22px; font-weight:800; color:var(--brown)}
+
+/* Ingredientes */
+.grid{display:grid; gap:14px; grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:820px){ .grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.tile{
+  background:#fff; border:1px solid #efdccd; border-radius:18px; padding:14px 14px 14px 16px;
+  display:flex; align-items:center; gap:12px; box-shadow:0 8px 18px rgba(122,77,42,.06)
+}
+.dot{width:12px; height:12px; border-radius:50%; background:var(--green); box-shadow:0 0 0 4px #edf3e3}
+
+/* Nutrición (tabla sin tablas) */
+.nutri-table{border:1px solid #efdccd; border-radius:16px; overflow:hidden; background:#fff}
+.nutri-table .row{display:grid; grid-template-columns:1fr 150px; padding:12px 14px; border-top:1px dashed #edd9c7}
+.nutri-table .row.head{background:#fff3e6; border-top:0; font-weight:800; color:var(--brown)}
+.nutri-table .row div:last-child{text-align:right}
+
+/* Beneficios */
+.benefits{display:grid; gap:16px; grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:920px){ .hero{grid-template-columns:1fr} .benefits{grid-template-columns:1fr} .product-spec{grid-template-columns:1fr} }
+.benefit{background:#fff; border:1px solid #e5d6c7; border-radius:18px; padding:16px; box-shadow:0 8px 18px rgba(122,77,42,.06)}
+.benefit h3{margin:0 0 6px; color:var(--brown); font-size:18px}
+
+/* Testimonios */
+.quotes{display:grid; gap:16px; grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:920px){ .quotes{grid-template-columns:1fr} }
+.quote{background:linear-gradient(180deg,#fff,#fff8f0); border:1px solid #efdccd; border-radius:16px; padding:16px; box-shadow:0 8px 18px rgba(122,77,42,.06)}
+.quote blockquote{margin:0 0 8px; font-weight:600; color:#5b402d}
+.quote figcaption{color:#876247; font-size:14px}
+
+/* FAQ */
+.faq{background:#fff; border:1px solid #efdccd; border-radius:14px; padding:12px 14px; margin-bottom:10px}
+.faq>summary{cursor:pointer; font-weight:700; color:var(--brown)}
+.faq[open]{box-shadow:0 8px 18px rgba(122,77,42,.06)}
+
+/* Contacto */
+.contact-form input,
+.contact-form textarea{
+  padding:12px 14px; border:1px solid #e5d6c7; border-radius:10px;
+  width:100%; max-width:560px; display:block; margin-bottom:10px; background:#fff
+}
+.social{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+.chip{display:inline-block; padding:8px 12px; border-radius:999px; background:#f7ede2; border:1px solid #ead8c8; color:#6b4b33; text-decoration:none; font-weight:600}
+.chip:hover{background:#f3e6d8}
+
+/* Footer */
+.foot{margin-top:28px; padding:24px 0 44px; color:#7b5b3e; font-size:14px; border-top:1px solid #efdccd; text-align:center}
+
+/* Accesibilidad */
+.sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+
+/* Acordeones organizados */
+.accordion-group { display: grid; gap: 12px; }
+
+/* Listas visuales */
+.bullet { margin: 8px 0 0 0; padding-left: 18px; }
+.bullet li { margin-bottom: 6px; }
+
+.check, .cross { list-style: none; padding-left: 0; margin: 8px 0 0; }
+.check li, .cross li { margin-bottom: 6px; padding-left: 26px; position: relative; }
+.check li::before { content: "✓"; color: var(--green); position: absolute; left: 0; top: 0; }
+.cross li::before { content: "✕"; color: #b65454; position: absolute; left: 0; top: 0; }
+
+/* Subtítulos pequeños dentro del acordeón */
+.mini { margin: 0 0 6px; color: var(--brown); font-size: 14px; letter-spacing: .2px; }
+
+/* Dos columnas en desktop para “qué comer rápido” */
+.cols { display: grid; gap: 14px; }
+@media (min-width: 820px) { .cols { grid-template-columns: 1fr 1fr; } }
+
+/* Rejilla de ingredientes funcionales reusa .grid y .tile */
+.ing .tile { align-items: flex-start; }
